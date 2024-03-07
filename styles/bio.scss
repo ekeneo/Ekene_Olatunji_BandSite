@@ -22,7 +22,7 @@
 
 // site-header block
 .site-header{
-    @include heading-style; 
+    @include heading; 
     @include mobile {
         display: flex;
         flex-flow: column wrap;
@@ -49,8 +49,8 @@
         }
     }
 }
-// main-nav block
 
+// main-nav block
 .main-nav {
     // main-nav elements
     &__list{
@@ -87,3 +87,83 @@
 
 }
 
+// hero block
+.hero {
+    background: url(/assets/images/hero-bio.jpg);
+    @include hero;
+    &__title{
+        @include mobile{
+            font-size: 3.625rem;
+        };
+        @include tablet {
+            font-size: 3.625rem;
+        };
+        @include desktop{
+            font-size: 4rem;
+        };
+    }
+}
+
+// article block
+.article {
+    color: $bandsite-black;
+    background-color: #ffffff;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    &__title{
+        margin-left: 5rem;
+       font-weight: 600;
+       font-size: 1.875rem;
+       padding: 1.25rem;
+    }
+    &__img{
+        width: 70vw; 
+        height: 70vh;
+        margin-left: 15rem;
+        max-width: 100%;
+        
+    }
+
+    &__blockquote {
+        color: $bandsite-black;
+        position: relative;
+        font-weight: bold;
+        font-style: normal;
+        font-size: 1.25rem;
+        margin-bottom: 0;
+    }
+
+    &__quote{
+        padding: 0px 13.125rem;
+        // margin-left: 0.0rem;
+        margin-right: 10rem;
+        text-align: justify;
+    }
+
+    &__footer{
+        font-weight: 600;
+        font-size: 12px;
+        margin-left: 16rem;
+    }
+    &__details{
+        margin-left: 15rem;
+        display: flex; 
+        margin-right: 15rem;
+    }
+    &__topic{
+        margin-left: 16rem;
+        // padding: 10px 10px;
+        margin-top: 3rem;
+    }
+    &__content{
+        flex-direction: column;
+        flex: 1;
+        text-align: left;
+        margin-right: 30px; /* Add space between paragraphs */
+
+    }
+}
+
+  
