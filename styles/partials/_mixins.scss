@@ -1,0 +1,40 @@
+@use "./variables" as *;
+
+@mixin heading-style {
+  background: $bandsite-black;
+  font-family: "avenir";
+  display: flex;
+  width: 100%;  
+  padding: 1.25rem;
+}
+
+@mixin logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 2.0rem;
+  font-weight: normal;
+  margin-left: 4rem;
+  padding-top: 0.625rem;
+}
+
+//   mixin for media queries screen size
+@mixin mobile {
+  // min-width: 320px
+  @media screen and (min-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  // min-width: 768px
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+  
+@mixin desktop {
+  // min-width: 1280px
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
