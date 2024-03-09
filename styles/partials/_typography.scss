@@ -1,0 +1,16 @@
+// Using font-face located in project folder
+@font-face {
+    font-family: "Avenir";
+    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Avenir";
+    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Avenir";
+    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
+    font-weight: 600;
+}

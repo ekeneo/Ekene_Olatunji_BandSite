@@ -1,21 +1,7 @@
+@use "./reset" as *;
 @use "./variables" as *;
+@use "./typography" as *;
 
-@mixin heading {
-  background: $bandsite-black;
-  font-family: "avenir";
-  display: flex;
-  width: 100%;  
-  padding: 1.25rem;
-}
-
-@mixin logo {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 2.0rem;
-  font-weight: normal;
-  margin-left: 4rem;
-  padding-top: 0.625rem;
-}
 
 @mixin hero {
   background-size: cover;
@@ -38,7 +24,7 @@
       font-size: 2.625rem;
       font-weight: 600;
       position: sticky;
-      padding: 80px 80px;
+      padding: 80px 20px;
       margin: 80px 20px;
   }
 }

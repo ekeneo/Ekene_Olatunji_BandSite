@@ -1,33 +1,20 @@
 // linking partials
-@use "./partials/reset";
+@use "./partials/reset" as *;
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
-
-// Using font-face in project folder
-@font-face {
-    font-family: "Avenir";
-    src: url(../assets/fonts/AvenirNextLTPro-Regular.otf) format("opentype");
-    font-weight: normal;
-}
-@font-face {
-    font-family: "Avenir";
-    src: url(../assets/fonts/AvenirNextLTPro-Bold.otf) format("opentype");
-    font-weight: bold;
-}
-@font-face {
-    font-family: "Avenir";
-    src: url(../assets/fonts/AvenirNextLTPro-Demi.otf) format("opentype");
-    font-weight: 600;
-}
+@use "./partials/typography" as *;
 
 // site-header block
 .site-header{
-    @include heading; 
-    @include mobile {
-        display: flex;
-        flex-flow: column wrap;
-        align-content: center;
-    }
+    background: $bandsite-black;
+    font-family: "avenir";
+    width: 100%;  
+    padding: 1.25rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+   
+    // media queries for site-header
     @include tablet {
         display: flex;
         flex-direction: row;
@@ -39,15 +26,24 @@
 
     // site-header element
     &__logo{
-        @include logo;
-        @include mobile {
-            padding-right: 20px;
-            // display: flex;
-            // justify-content: center;
-            // width: 40%;
-            // margin: 3vw 0;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 2.3rem;
+        font-weight: normal;
+        margin-left: 10rem;
+        padding-top: 0.625rem;
+        padding-right: 40px;
+        // media queries for site-header__logo
+        @include tablet{
+            font-size: 2.0rem;
+            margin-left: 4rem;
+        }
+        @include desktop{
+            font-size: 2.0rem;
+            margin-left: 4rem;
         }
     }
+    
 }
 
 // main-nav block
@@ -57,49 +53,61 @@
         display: flex;
         list-style: none;
     }
-    // $__item{}
     &__link{
         text-decoration: none;
         color: #ffffff;
-        padding: 1.25rem; 
-    }
-    &__link--active{
-        border-bottom: 0.25rem solid #ffffff;
-        font-weight: bold;
+        padding: 4.25rem; 
         padding-bottom: 2.125rem;
-    }
-    // media queries for main-nav
-    // @include mobile {
-    //     width: 40%;
-    //     margin: 3vw 0;
-    //     background: lightgreen;
-    // }
-    // @include tablet {
-    //     width: 40%;
-    //     margin: 3vw 0;
-    //     background: lightgreen;
-    // }
-    // @include desktop {
-    //     width: 40%;
-    //     margin: 3vw 0;
-    //     background: lightgreen;
-    // }
 
+        &--active{
+            border-bottom: 0.25rem solid #ffffff;
+            font-weight: bold;
+            padding-bottom: 2.125rem;
+        }
+        // media queries for main-nav__link
+        @include tablet{
+            padding: 2.1rem;
+        }
+        @include desktop {
+            padding: 2.1rem;
+        }
+    }
+        
 }
 
 // hero block
 .hero {
     background: url(/assets/images/hero-bio.jpg);
-    @include hero;
+    font-size: 3.625rem;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 60vh;
+    min-height: 6.25rem;
+    display: flex;
+  
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 60vh;
+        background: rgba(0, 0, 0, 0.5);
+    }
+  
     &__title{
-        @include mobile{
-            font-size: 3.625rem;
-        };
+        color: #ffffff;
+        font-size: 2.625rem;
+        font-weight: 600;
+        position: sticky;
+        padding: 5rem 0.625rem;
+        margin: 5rem 1.25rem;
+        // media queries for hero__title
         @include tablet {
             font-size: 3.625rem;
         };
         @include desktop{
             font-size: 4rem;
+            padding: 5rem 5rem;
         };
     }
 }
@@ -111,19 +119,40 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     &__title{
-        margin-left: 5rem;
        font-weight: 600;
        font-size: 1.875rem;
-       padding: 1.25rem;
+       margin-left: 1rem;
+       padding: 0.625rem;
+
+       // media queris for article__title
+       @include desktop{
+        margin-left: 5rem;
+        padding: 1.25rem;
+       }
     }
     &__img{
-        width: 70vw; 
-        height: 70vh;
-        margin-left: 15rem;
-        max-width: 100%;
-        
+        width: 70%; 
+        height: 50%;
+        margin-left: 5rem;
+        margin-right: 0rem;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        // media queris for article__img
+        @include tablet{
+            width: 75%; 
+            height: 45%;
+            margin-left: 5rem;
+            margin-right: 5rem;
+        }
+        @include desktop{
+            width: 75%; 
+            height: 45%;
+            margin-left: 10rem;
+        }
     }
 
     &__blockquote {
@@ -136,33 +165,73 @@
     }
 
     &__quote{
-        padding: 0px 13.125rem;
-        // margin-left: 0.0rem;
-        margin-right: 10rem;
-        text-align: justify;
-    }
+        margin-right: 5.4rem;
+        margin-left: 2.5rem;
+        text-align: left;
 
-    &__footer{
-        font-weight: 600;
-        font-size: 12px;
-        margin-left: 16rem;
+        // media queris for article__quote
+        @include tablet {
+            margin-left: 3.125rem;
+            margin-right: 15rem;
+            text-align: left;
+        }
+        @include desktop {
+            margin-left: 7.5rem;
+            margin-right: 15rem;
+            text-align: left;
+        }
     }
-    &__details{
-        margin-left: 15rem;
-        display: flex; 
-        margin-right: 15rem;
+    &__footer{
+        font-weight: 700;
+        font-size: 17px;
+        margin-left: 5rem;
+        //  media queris for article__footer 
+        @include tablet {
+            margin-left: 6rem;
+        }
+        @include desktop {
+            margin-left: 10.2rem;
+        }
     }
     &__topic{
-        margin-left: 16rem;
-        // padding: 10px 10px;
+        margin-left: 5rem;
         margin-top: 3rem;
+        //  media queris for article__topic 
+        @include tablet {
+            margin-left: 6rem;
+        }
+        @include desktop {
+            margin-left: 10.2rem;
+        }
+    }
+    &__details{
+        display: flex; 
+        flex-direction: column;
+        margin-right: 15rem;
+        margin-left: 5rem;
+        
+        // media queris for article__details
+        @include tablet{
+            flex-direction: row;
+        }
+        @include desktop{
+            flex-direction: row;
+            margin-left: 10rem;
+        }
     }
     &__content{
         flex-direction: column;
         flex: 1;
         text-align: left;
-        margin-right: 30px; /* Add space between paragraphs */
+        margin-right: -6.25rem;
 
+        // media queris for article__content
+        @include tablet{
+            margin-right: 1.25rem;
+        }
+        @include desktop{
+            margin-right: 1.875rem;
+        }
     }
 }
 

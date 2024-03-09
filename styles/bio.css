@@ -26,16 +26,11 @@ body {
 .site-header {
   background: #323232;
   font-family: "avenir";
-  display: flex;
   width: 100%;
   padding: 1.25rem;
-}
-@media screen and (min-width: 320px) {
-  .site-header {
-    display: flex;
-    flex-flow: column wrap;
-    align-content: center;
-  }
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
 }
 @media screen and (min-width: 768px) {
   .site-header {
@@ -52,14 +47,22 @@ body {
 .site-header__logo {
   color: #ffffff;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: normal;
-  margin-left: 4rem;
+  margin-left: 10rem;
   padding-top: 0.625rem;
+  padding-right: 40px;
 }
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 768px) {
   .site-header__logo {
-    padding-right: 20px;
+    font-size: 2rem;
+    margin-left: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .site-header__logo {
+    font-size: 2rem;
+    margin-left: 4rem;
   }
 }
 
@@ -70,21 +73,33 @@ body {
 .main-nav__link {
   text-decoration: none;
   color: #ffffff;
-  padding: 1.25rem;
+  padding: 4.25rem;
+  padding-bottom: 2.125rem;
 }
 .main-nav__link--active {
   border-bottom: 0.25rem solid #ffffff;
   font-weight: bold;
   padding-bottom: 2.125rem;
 }
+@media screen and (min-width: 768px) {
+  .main-nav__link {
+    padding: 2.1rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .main-nav__link {
+    padding: 2.1rem;
+  }
+}
 
 .hero {
   background: url(/assets/images/hero-bio.jpg);
+  font-size: 3.625rem;
   background-size: cover;
   background-position: center;
   width: 100%;
   height: 60vh;
-  min-height: 100px;
+  min-height: 6.25rem;
   display: flex;
 }
 .hero::before {
@@ -99,13 +114,8 @@ body {
   font-size: 2.625rem;
   font-weight: 600;
   position: sticky;
-  padding: 80px 80px;
-  margin: 80px 20px;
-}
-@media screen and (min-width: 320px) {
-  .hero__title {
-    font-size: 3.625rem;
-  }
+  padding: 5rem 0.625rem;
+  margin: 5rem 1.25rem;
 }
 @media screen and (min-width: 768px) {
   .hero__title {
@@ -115,6 +125,7 @@ body {
 @media screen and (min-width: 1280px) {
   .hero__title {
     font-size: 4rem;
+    padding: 5rem 5rem;
   }
 }
 
@@ -124,18 +135,43 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .article__title {
-  margin-left: 5rem;
   font-weight: 600;
   font-size: 1.875rem;
-  padding: 1.25rem;
+  margin-left: 1rem;
+  padding: 0.625rem;
+}
+@media screen and (min-width: 1280px) {
+  .article__title {
+    margin-left: 5rem;
+    padding: 1.25rem;
+  }
 }
 .article__img {
-  width: 70vw;
-  height: 70vh;
-  margin-left: 15rem;
-  max-width: 100%;
+  width: 70%;
+  height: 50%;
+  margin-left: 5rem;
+  margin-right: 0rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+@media screen and (min-width: 768px) {
+  .article__img {
+    width: 75%;
+    height: 45%;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article__img {
+    width: 75%;
+    height: 45%;
+    margin-left: 10rem;
+  }
 }
 .article__blockquote {
   color: #323232;
@@ -146,27 +182,83 @@ body {
   margin-bottom: 0;
 }
 .article__quote {
-  padding: 0px 13.125rem;
-  margin-right: 10rem;
-  text-align: justify;
+  margin-right: 5.4rem;
+  margin-left: 2.5rem;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .article__quote {
+    margin-left: 3.125rem;
+    margin-right: 15rem;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article__quote {
+    margin-left: 7.5rem;
+    margin-right: 15rem;
+    text-align: left;
+  }
 }
 .article__footer {
-  font-weight: 600;
-  font-size: 12px;
-  margin-left: 16rem;
+  font-weight: 700;
+  font-size: 17px;
+  margin-left: 5rem;
 }
-.article__details {
-  margin-left: 15rem;
-  display: flex;
-  margin-right: 15rem;
+@media screen and (min-width: 768px) {
+  .article__footer {
+    margin-left: 6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article__footer {
+    margin-left: 10.2rem;
+  }
 }
 .article__topic {
-  margin-left: 16rem;
+  margin-left: 5rem;
   margin-top: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .article__topic {
+    margin-left: 6rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article__topic {
+    margin-left: 10.2rem;
+  }
+}
+.article__details {
+  display: flex;
+  flex-direction: column;
+  margin-right: 15rem;
+  margin-left: 5rem;
+}
+@media screen and (min-width: 768px) {
+  .article__details {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article__details {
+    flex-direction: row;
+    margin-left: 10rem;
+  }
 }
 .article__content {
   flex-direction: column;
   flex: 1;
   text-align: left;
-  margin-right: 30px; /* Add space between paragraphs */
+  margin-right: -6.25rem;
+}
+@media screen and (min-width: 768px) {
+  .article__content {
+    margin-right: 1.25rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .article__content {
+    margin-right: 1.875rem;
+  }
 }/*# sourceMappingURL=bio.css.map */
