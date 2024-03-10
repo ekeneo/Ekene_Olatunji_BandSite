@@ -58,6 +58,11 @@
         color: #ffffff;
         padding: 4.25rem; 
         padding-bottom: 2.125rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $bandsite-silver;
+        }
 
         &--active{
             border-bottom: 0.25rem solid #ffffff;
@@ -71,8 +76,7 @@
         @include desktop {
             padding: 2.1rem;
         }
-    }
-        
+    }    
 }
 
 // hero block
@@ -260,6 +264,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             margin-left: 6rem;
+            padding-right: 4rem;
         }
 
     &__title {
@@ -280,23 +285,28 @@
     &__item {
         margin-left: 0.5rem;
         flex: 1;
-        max-width: calc(83.33% - 10px);
+        max-width: calc(83.33% - 0.625rem);
         
         
         // media queries for gallery__item
         @include tablet{
-            flex: 0 0 calc(30% - 2rem);
+            flex: 0 0 calc(30% - 0.5rem);
             
         }
         @include desktop{
-            flex: 0 0 calc(30% - 10px);
+            flex: 0 0 calc(30% - 0.625rem);
         }
     }
 
     &__img {
         width: 100%;
         height: auto;
+        filter: grayscale(100%); /* Grayscale the images by default */
+        transition: filter 0.3s ease; /* Smooth transition effect */
 
+        &:hover{
+           filter: grayscale(0%); /* Revert the images to color on hover */
+        }
         // media queries for gallery__img
         @include tablet{
 
@@ -306,98 +316,6 @@
         }
     }
 }
-
-// footer block
-// .footer{
-//     background-color: $bandsite-black;
-//     color: white;
-//     font-weight: normal;
-//     padding: 1rem 2rem;
-//     width: 100%;
-    
-//     // media queries for footer
-//     @include tablet{
-//         display: flex;
-//         flex-direction: row;
-//     }
-//     @include desktop {
-//         display: flex;
-//         flex-direction: row;
-//     }
-    
-//     &__title{ 
-//         font-weight: 600;
-//         width: 100%;
-
-//         // media queries for footer_title
-//         @include tablet{
-//             width: 30%;
-//         }
-//         @include desktop{
-//             width: 25%;
-//             padding-left: 70px;
-//         }
-//     }
-//     &__icon{
-//         // flex-direction: column;
-//         padding-right: 1.25rem;
-//         // width: 10vw;
-
-//         @include tablet{
-//             margin-bottom: 120px;
-//         }
-//         @include desktop{
-//             margin-bottom: 210px;
-//             margin-top: -10px;
-//         }
-//     }
-//     &__subtitle{
-//         // font-family: "avenir";
-//          font-weight: 600;
-//          padding: 1rem 0rem;
-//     }
-//     &__text{
-//          font-weight: normal;
-//     }
-//     &__logo{
-//          font-weight: normal;
-//          padding-top: 2rem;
-//          @include tablet{
-//             margin-bottom: 120px;
-//         }
-//         @include desktop{
-//             margin-bottom: 120px;
-//             margin-top: -10px;
-
-//         }
-//     }
-//     &__copyright{
-//          font-weight: normal;
-//          @include tablet{
-           
-//         }
-//         @include desktop{
-//             flex-basis: 100%;
-//             text-align: left;
-//             margin-top: 16.5rem;
-//             margin-left: -60rem;
-//         }
-//     }
-//     &__group{
-//         padding: 2px;
-//      @include tablet{
-//         // flex-direction: column;
-//     //     align-content: flex-end;
-//     //  }
-//     }
-//     @include desktop{
-//         margin-top: 60px;
-//         margin-right: 10px;
-//         flex-basis: calc(45% - 20px);
-//         margin-left: -21.75rem
-//     }
-//     }
-// }
 
 // ==== Main footer block ===
 // footer mobile
@@ -433,6 +351,10 @@
         }
         &__group{
             padding: 0px;
+        }
+        &__text--email{
+            color: inherit;
+            text-decoration: none;
         }
     }
 
@@ -494,6 +416,10 @@
         }
         &__subtitle{
             padding-right: 40px;
+        }
+        &__text--email{
+            color: inherit;
+            text-decoration: none;
         }
     
         &__copyright {
@@ -564,6 +490,10 @@
         }
         &__subtitle{
             padding-right: 40px;
+        }
+        &__text--email{
+            color: inherit;
+            text-decoration: none;
         }
     
         &__copyright {
