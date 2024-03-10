@@ -3,31 +3,31 @@
 @use "./typography" as *;
 
 
-@mixin hero {
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 60vh;
-  min-height: 100px;
-  display: flex;
+// @mixin hero {
+//   background-size: cover;
+//   background-position: center;
+//   width: 100%;
+//   height: 60vh;
+//   min-height: 100px;
+//   display: flex;
 
-  &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 60vh;
-      background: rgba(0, 0, 0, 0.5);
-  }
+//   &::before {
+//       content: "";
+//       position: absolute;
+//       width: 100%;
+//       height: 60vh;
+//       background: rgba(0, 0, 0, 0.5);
+//   }
 
-  &__title{
-      color: #ffffff;
-      font-size: 2.625rem;
-      font-weight: 600;
-      position: sticky;
-      padding: 80px 20px;
-      margin: 80px 20px;
-  }
-}
+//   &__title{
+//       color: #ffffff;
+//       font-size: 2.625rem;
+//       font-weight: 600;
+//       position: sticky;
+//       padding: 80px 20px;
+//       margin: 80px 20px;
+//   }
+// }
 
 //   mixin for media queries screen size
 @mixin mobile {
