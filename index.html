@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Site</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <script src="./scripts/index-page.js" defer></script>
   </head>
   <body>
     <!-- site-header block -->
@@ -21,7 +22,7 @@
             >
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="./index.html">Shows</a>
+            <a class="main-nav__link" href="./pages/shows.html">Shows</a>
           </li>
         </ul>
       </nav>
@@ -98,6 +99,45 @@
           <img class="gallery__img" src="./assets/images/Photo-gallery-9.jpg" />
         </div>
       </section>
+    </div>
+
+    <!-- comment block -->
+    <div class="comments-container">
+      <h2 class="comments-title">Join the Conversation</h2>
+      <!-- user icon -->
+      <img
+        src="./assets/images/Mohan-muruge.jpg"
+        alt="User Icon"
+        class="user-icon"
+      />
+      <form class="comments-form">
+        <!-- Name text area -->
+        <div class="input-container">
+          <label for="nameId">NAME</label>
+          <input type="text" id="nameId" placeholder="Enter your name" />
+        </div>
+        <!-- Comment text area -->
+        <div class="input-container">
+          <label for="commentId">COMMENT</label>
+          <textarea
+            type="text"
+            id="commentId"
+            placeholder="Add a new comment"
+          ></textarea>
+        </div>
+        <div class="comments-submit">
+          <!-- Submit button -->
+          <input type="submit" value="COMMENT" id="add-comment-btn" />
+        </div>
+      </form>
+      <!-- <div>
+          <button id="add-comment-btn">Add Comment</button>
+        </div> -->
+
+      <!-- comments list -->
+      <div id="comments-list">
+        <!-- Default comments will be rendered here -->
+      </div>
     </div>
 
     <!-- Main footer block -->

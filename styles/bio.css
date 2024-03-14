@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Avenir";
+  width: 100%;
 }
 
 @font-face {
@@ -328,11 +329,6 @@ body {
 .gallery__img {
   width: 100%;
   height: auto;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
-.gallery__img:hover {
-  filter: grayscale(0%);
 }
 
 @media screen and (min-width: 320px) {
@@ -503,4 +499,143 @@ body {
     align-self: flex-start;
     font-size: 0.75rem;
   }
+}
+.comments-container {
+  max-width: 600px;
+  margin-left: 1rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .comments-container {
+    max-width: 600px;
+    margin-left: 4rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments-container {
+    max-width: 800px;
+    margin-left: 1rem;
+    margin: 0 auto;
+  }
+}
+
+.comments-title {
+  color: #323232;
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin-left: 1rem;
+  margin-bottom: 0rem;
+  padding: 0.625rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .comments-title {
+    margin-left: -2rem;
+    position: relative;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments-title {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.user-icon {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.comments-form {
+  margin-bottom: 20px;
+  margin-left: 6rem;
+  margin-top: 20px;
+}
+
+.comments-form input[type=text]::-moz-placeholder, .comments-form textarea::-moz-placeholder {
+  color: black;
+}
+
+.comments-form input[type=text]::placeholder,
+.comments-form textarea::placeholder {
+  color: black;
+}
+
+.comments-submit {
+  display: flex;
+}
+@media screen and (min-width: 768px) {
+  .comments-submit {
+    justify-content: end;
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .comments-submit {
+    justify-content: end;
+    margin-right: 30px;
+  }
+}
+
+.input-container {
+  margin-bottom: 10px;
+}
+
+.input-container label {
+  display: block;
+  font-weight: 600;
+  color: #AFAFAF;
+}
+
+[type=submit] {
+  width: 94%;
+  background: #323232;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 500;
+}
+@media screen and (min-width: 768px) {
+  [type=submit] {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  [type=submit] {
+    width: 30%;
+  }
+}
+
+[type=submit]:hover {
+  background: black;
+}
+
+.input-container input[type=text],
+.input-container textarea {
+  width: calc(100% - 34px);
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #E1E1E1;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  font-family: "avenir";
+  font-size: 18px;
+  background-color: #FAFAFA;
+}
+
+.input-container textarea {
+  height: 150px;
 }/*# sourceMappingURL=bio.css.map */
