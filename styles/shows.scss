@@ -89,32 +89,59 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 60vh;
+    height: 80vh;
     min-height: 6.25rem;
     display: flex;
+    flex-direction: column; /* Added to stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: start; /* Center items horizontally */
+    position: relative; /* Added for positioning pseudo-element */
   
     &::before {
         content: "";
         position: absolute;
         width: 100%;
-        height: 60vh;
+        height: 80vh;
         background: rgba(0, 0, 0, 0.5);
     }
-  
+    &__subtitle{
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 500;
+        position: sticky;
+        padding: 0rem 0.625rem;
+        margin: 0rem 1.25rem;
+        z-index: 2; /* Ensure the subtitle is above the overlay */
+        margin-bottom: 10px; 
+        // margin-top: 80px
+        @include tablet{
+            font-size: 1.5rem;
+        }
+        @include desktop{
+            font-size: 1.5rem;
+            margin-left: 6rem;
+        }
+     }
     &__title{
         color: #ffffff;
-        font-size: 2.625rem;
+        font-size: 2.5rem;
         font-weight: 600;
         position: sticky;
-        padding: 5rem 0.625rem;
-        margin: 5rem 1.25rem;
+        padding:0rem 0.625rem;
+        margin: 0rem 1.25rem;
+        max-width: 400px; 
+        word-wrap: break-word; 
         // media queries for hero__title
         @include tablet {
             font-size: 3.625rem;
+            max-width: 600px; 
+            word-wrap: break-word; 
         };
         @include desktop{
             font-size: 4rem;
-            padding: 5rem 5rem;
+            padding: 0rem 5rem;
+            max-width: 700px; 
+            word-wrap: break-word; 
         };
     }
 }
@@ -314,3 +341,38 @@
         }
     }
 }  
+
+// iframe
+.hero__iframe {
+    display: flex;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    
+    @include desktop{
+        position: absolute;
+        right: 0;
+        margin-right: 16rem;
+    }
+   
+}
+
+// shows block
+.shows{
+    &__header{
+        color: $bandsite-black;
+        font-weight: 600;
+        font-size: 1.875rem;
+        margin-left: 1rem;
+        margin-bottom: 0rem;
+        padding: 1rem;
+        width: 100%;
+        @include desktop{
+            padding-left: 6rem;
+            margin-left: 0 0;
+        }
+    }
+}

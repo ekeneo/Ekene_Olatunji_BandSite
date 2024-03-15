@@ -105,34 +105,65 @@ body {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   min-height: 6.25rem;
   display: flex;
+  flex-direction: column; /* Added to stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: start; /* Center items horizontally */
+  position: relative; /* Added for positioning pseudo-element */
 }
 .hero::before {
   content: "";
   position: absolute;
   width: 100%;
-  height: 60vh;
+  height: 80vh;
   background: rgba(0, 0, 0, 0.5);
+}
+.hero__subtitle {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  position: sticky;
+  padding: 0rem 0.625rem;
+  margin: 0rem 1.25rem;
+  z-index: 2; /* Ensure the subtitle is above the overlay */
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
+  .hero__subtitle {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__subtitle {
+    font-size: 1.5rem;
+    margin-left: 6rem;
+  }
 }
 .hero__title {
   color: #ffffff;
-  font-size: 2.625rem;
+  font-size: 2.5rem;
   font-weight: 600;
   position: sticky;
-  padding: 5rem 0.625rem;
-  margin: 5rem 1.25rem;
+  padding: 0rem 0.625rem;
+  margin: 0rem 1.25rem;
+  max-width: 400px;
+  word-wrap: break-word;
 }
 @media screen and (min-width: 768px) {
   .hero__title {
     font-size: 3.625rem;
+    max-width: 600px;
+    word-wrap: break-word;
   }
 }
 @media screen and (min-width: 1280px) {
   .hero__title {
     font-size: 4rem;
-    padding: 5rem 5rem;
+    padding: 0rem 5rem;
+    max-width: 700px;
+    word-wrap: break-word;
   }
 }
 
@@ -303,5 +334,37 @@ body {
   .footer__copyright {
     align-self: flex-start;
     font-size: 0.75rem;
+  }
+}
+.hero__iframe {
+  display: flex;
+  position: relative;
+  width: auto;
+  max-width: 100%;
+  flex-wrap: wrap;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 1280px) {
+  .hero__iframe {
+    position: absolute;
+    right: 0;
+    margin-right: 16rem;
+  }
+}
+
+.shows__header {
+  color: #323232;
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin-left: 1rem;
+  margin-bottom: 0rem;
+  padding: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 1280px) {
+  .shows__header {
+    padding-left: 6rem;
+    margin-left: 0 0;
   }
 }/*# sourceMappingURL=shows.css.map */
