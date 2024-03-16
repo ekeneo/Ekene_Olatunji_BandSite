@@ -81,6 +81,13 @@ function renderCommentEntries() {
   });
 }
 
+// To generate dynamic date
+function getCurrentDate() {
+  var date = new Date();
+  var options = { year: 'numeric', month: 'numeric', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
+}
+
 // Form event handling callback
 const formEl = document.querySelector('.comments-form');
 
@@ -89,11 +96,12 @@ formEl.addEventListener('submit', (event) => {
 
   const nameVal = event.target.nameId.value;
   const commentVal = event.target.commentId.value;
+  const dateVal = getCurrentDate();
 
   const newEntry = {
     name: nameVal,
-    comment: commentVal
-    // date: dateVal
+    comment: commentVal,
+    date: dateVal
   };
 
   console.log('newEntry: ', newEntry);
@@ -109,3 +117,4 @@ formEl.addEventListener('submit', (event) => {
 
 // To invoke the function to render initial comment entries on page load
 renderCommentEntries();
+
