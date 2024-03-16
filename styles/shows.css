@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Avenir";
-  width: 100%;
+  max-width: 100%;
 }
 
 @font-face {
@@ -164,6 +164,23 @@ body {
     padding: 0rem 5rem;
     max-width: 700px;
     word-wrap: break-word;
+  }
+}
+
+.hero__iframe {
+  display: flex;
+  position: relative;
+  width: auto;
+  max-width: 100%;
+  flex-wrap: wrap;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+@media screen and (min-width: 1280px) {
+  .hero__iframe {
+    position: absolute;
+    right: 0;
+    margin-right: 6rem;
   }
 }
 
@@ -334,37 +351,5 @@ body {
   .footer__copyright {
     align-self: flex-start;
     font-size: 0.75rem;
-  }
-}
-.hero__iframe {
-  display: flex;
-  position: relative;
-  width: auto;
-  max-width: 100%;
-  flex-wrap: wrap;
-  margin-left: 2rem;
-  margin-top: 2rem;
-}
-@media screen and (min-width: 1280px) {
-  .hero__iframe {
-    position: absolute;
-    right: 0;
-    margin-right: 16rem;
-  }
-}
-
-.shows__header {
-  color: #323232;
-  font-weight: 600;
-  font-size: 1.875rem;
-  margin-left: 1rem;
-  margin-bottom: 0rem;
-  padding: 1rem;
-  width: 100%;
-}
-@media screen and (min-width: 1280px) {
-  .shows__header {
-    padding-left: 6rem;
-    margin-left: 0 0;
   }
 }/*# sourceMappingURL=shows.css.map */

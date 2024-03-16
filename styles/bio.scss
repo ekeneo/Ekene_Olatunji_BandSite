@@ -509,9 +509,11 @@
     max-width: 600px;
     margin-left: 1rem;
     margin: 0 auto;
+    border-bottom: 2px solid $bandsite-mercury;
     @include tablet{
         max-width: 600px;
         margin-left: 4rem;
+        margin: 0 auto;
     }
     @include desktop{
         max-width: 800px;
@@ -550,6 +552,7 @@
     margin-bottom: 20px;
     margin-left: 6rem;
     margin-top: 20px;
+    padding-bottom: 20px;
 }
 .comments-form input[type="text"]::placeholder,
 .comments-form textarea::placeholder {
@@ -617,3 +620,64 @@
     height: 150px;
 }
 
+// comments list
+.comments{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+}
+
+.comments-list{
+    flex-direction: row;
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 2px solid $bandsite-mercury;
+    padding: 0.625rem;
+    max-width: 600px;
+    margin: 0 auto;
+    @include tablet{
+        padding: 0rem 0.625rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    @include desktop{
+        padding: 0rem 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+.comments-list__icon{
+    flex-shrink: 0;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    width: 50px;
+    height: 50px;
+    background-color: $bandsite-mercury; 
+}
+.comments-list__group{
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-start;
+    // width: 100%;
+    flex-grow: 1;
+}
+.comments-list__group2{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.comments-list__date{
+   font-size: 16px;
+   color: $bandsite-silver;
+   margin-top: 20px;
+}
+.comments-list__name{
+    font-size: 18px;
+    font-weight: 600;
+}
+.comments-list__comment{
+    margin-top: 0px;
+}

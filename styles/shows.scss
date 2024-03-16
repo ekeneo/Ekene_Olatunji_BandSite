@@ -146,6 +146,117 @@
     }
 }
 
+// iframe
+.hero__iframe {
+    display: flex;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    
+    @include desktop{
+        position: absolute;
+        right: 0;
+        margin-right: 6rem;
+    }
+   
+}
+
+// shows block
+// .shows{
+//     &__detail{
+//     border-bottom: 2px solid $bandsite-mercury;
+//     margin-bottom: 2rem;
+//     width: 100%;
+//         // @include tablet{
+//         //     display: flex;
+//         //     flex-direction: column;
+//         // }
+//     }
+//     &__header{
+//         color: $bandsite-black;
+//         font-weight: 600;
+//         font-size: 1.875rem;
+//         margin-left: 1rem;
+//         margin-bottom: 0rem;
+//         padding: 1rem;
+//         width: 100%;
+    
+//         @include desktop{
+//             padding-left: 6rem;
+//             margin-left: 0 0;
+//         }
+//     }
+//     &__btn{
+//         margin-left: 2rem;
+//         margin-bottom: 2rem;
+//         background-color: $bandsite-black;
+//         color: #ffffff;
+//         border-radius: 4px;
+
+//         width: 85%;
+//         background: $bandsite-black;
+//         border-radius:5px;
+//         border:0;
+//         cursor:pointer;
+//         color:white;
+//         font-size:20px;
+//         padding-top:20px;
+//         padding-bottom:20px;
+//         transition: all 0.3s;
+//         margin-top:-4px;
+//         font-weight:600;
+        
+//     }
+//     &__btn:hover { 
+//         background: black;
+//     }
+  
+//     &__table {
+//         border-collapse: collapse;
+//         width: 100%;
+//         margin-left: 1.8rem;
+    
+//     &--row {
+//         display: flex;
+//         flex-direction: column;
+//         // @include desktop{
+//         //     display: flex;
+//         //     justify-content: space-between;
+//         // }
+//     }
+    
+//     &--head,
+//     &--data {
+//         padding: 8px;
+//         text-align: left;
+//         font-size: 18px;
+//         color: black;
+//     }
+//     &--data{
+//         padding-top: 4px;
+//         padding-bottom: 18px;
+//     }
+//     &--date{
+//         font-weight: 600;
+//     }
+    
+//     &--head {
+//         // background-color: #f2f2f2;
+//         font-weight: 600;
+//         color: $bandsite-silver;
+//         font-size: 16px;
+//     }
+
+//     }
+// }
+// .button-container{
+//     margin-top: 2rem;
+    
+// }
+
 // ==== Main footer block ===
 // footer mobile
 @include mobile{
@@ -342,37 +453,31 @@
     }
 }  
 
-// iframe
-.hero__iframe {
-    display: flex;
-    position: relative;
-    width: auto;
-    max-width: 100%;
-    flex-wrap: wrap;
-    margin-left: 2rem;
-    margin-top: 2rem;
-    
-    @include desktop{
-        position: absolute;
-        right: 0;
-        margin-right: 16rem;
-    }
-   
-}
-
-// shows block
-.shows{
-    &__header{
-        color: $bandsite-black;
-        font-weight: 600;
-        font-size: 1.875rem;
-        margin-left: 1rem;
-        margin-bottom: 0rem;
-        padding: 1rem;
-        width: 100%;
-        @include desktop{
-            padding-left: 6rem;
-            margin-left: 0 0;
-        }
-    }
-}
+// ===
+// @include tablet{
+//     .shows__detail {
+//         display: flex;
+//       }
+      
+//       .shows__table {
+//         border-collapse: collapse;
+//         width: 100%;
+//       }
+      
+//       .shows__table--head,
+//       .shows__table--data {
+//         padding: 8px;
+//         text-align: left;
+//       }
+      
+//       .shows__table--head {
+//         font-weight: bold;
+//       }
+      
+//       .button-container {
+//         display: flex;
+//         justify-content: flex-end;
+//         align-items: center;
+//       }
+      
+// }
