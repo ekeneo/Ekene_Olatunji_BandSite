@@ -184,6 +184,73 @@ body {
   }
 }
 
+.shows {
+  display: flex;
+  flex-direction: column;
+}
+
+.shows__header {
+  color: #323232;
+  font-weight: 600;
+  font-size: 1.875rem;
+  margin-left: 1rem;
+  margin-bottom: 0rem;
+  padding: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 1280px) {
+  .shows__header {
+    padding-left: 6rem;
+    margin-left: 0 0;
+  }
+}
+
+.shows-head {
+  font-weight: 600;
+  color: #AFAFAF;
+  font-size: 16px;
+  margin-left: 2rem;
+  position: absolute;
+  display: grid;
+}
+
+.shows-data {
+  padding: 8px;
+  text-align: left;
+  font-size: 18px;
+  color: black;
+  border-bottom: 2px solid #E1E1E1;
+  margin-bottom: 4rem;
+  width: 100%;
+  margin-left: 1.5rem;
+  display: grid;
+}
+.shows-data__date {
+  font-weight: 600;
+}
+.shows-data__btn {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+  background-color: #323232;
+  color: #ffffff;
+  border-radius: 4px;
+  width: 85%;
+  background: #323232;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 600;
+}
+.shows-data__btn:hover {
+  background: black;
+}
+
 @media screen and (min-width: 320px) {
   .footer {
     background-color: #323232;
