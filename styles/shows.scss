@@ -258,12 +258,7 @@
 // }
 
 // ===shows 2===
-.shows{
-    display: flex;
-    flex-direction: column;
-    
-}
-.shows__header{
+.shows_header{
     color: $bandsite-black;
     font-weight: 600;
     font-size: 1.875rem;
@@ -277,6 +272,10 @@
         margin-left: 0 0;
     }
 }
+.shows{
+    display: flex;
+    flex-direction: column;
+}
 .shows-head{
     font-weight: 600;
     color: #AFAFAF;
@@ -284,9 +283,14 @@
     margin-left: 2rem;
     position: absolute;
     display: grid;
-    // margin: 2rem;
-    // margin-bottom: 3rem;
-    // justify-content: space-between;
+
+    &__venue{
+        padding-top: 0.625rem;
+    }
+
+    &__location{
+        padding-top: 0.625rem;
+    }
 }
 
 .shows-data{
@@ -295,7 +299,7 @@
     font-size: 18px;
     color: black;
     border-bottom: 2px solid #E1E1E1;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
     width: 100%;
     margin-left: 1.5rem;
     display: grid;
@@ -305,10 +309,17 @@
 
     &__date{
         font-weight: 600;
+        padding-top: 0.8rem;
+    }
+    &__venue{
+        padding-top: 0.3rem;
+    }
+    &__location{
+        padding-top: 0.1rem;
     }
     &__btn{
-        margin-left: 2rem;
-        margin-bottom: 2rem;
+        margin-left: 0.2rem;
+        margin-bottom: 1rem;
         background-color: #323232;
         color: #ffffff;
         border-radius: 4px;

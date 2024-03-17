@@ -1,6 +1,6 @@
 // === html for reference ===
 /* <section class="shows-container">
-      <h3 class="shows__header">Shows</h3>
+      <h3 class="shows_header">Shows</h3>
       <div class="shows">
         <div class="shows-head">
           <p class="shows-head__date">DATE</p>
