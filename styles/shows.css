@@ -209,6 +209,12 @@ body {
     margin-left: 1rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows {
+    margin-left: 20rem;
+    margin-right: 20rem;
+  }
+}
 
 .shows-head {
   font-weight: 600;
@@ -220,16 +226,12 @@ body {
 }
 @media screen and (min-width: 768px) {
   .shows-head {
-    display: flex;
-    gap: 150px;
-    align-items: center;
+    display: none;
   }
 }
 @media screen and (min-width: 1280px) {
   .shows-head {
-    display: flex;
-    gap: 150px;
-    align-items: center;
+    display: none;
   }
 }
 .shows-head__venue {
@@ -296,8 +298,46 @@ body {
   margin-top: -4px;
   font-weight: 600;
 }
+@media screen and (min-width: 768px) {
+  .shows-data__btn {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
 .shows-data__btn:hover {
   background: black;
+}
+
+.shows-head2 {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .shows-head2 {
+    font-weight: 600;
+    color: #AFAFAF;
+    font-size: 16px;
+    margin-left: 2.8rem;
+    display: flex;
+    gap: 150px;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-head2 {
+    font-weight: 600;
+    color: #AFAFAF;
+    font-size: 16px;
+    margin-left: 22rem;
+    display: flex;
+    gap: 150px;
+    align-items: center;
+  }
+}
+.shows-head2__venue {
+  padding-top: 0.625rem;
+}
+.shows-head2__location {
+  padding-top: 0.625rem;
 }
 
 @media screen and (min-width: 320px) {
