@@ -204,6 +204,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media screen and (min-width: 768px) {
+  .shows {
+    margin-left: 1rem;
+  }
+}
 
 .shows-head {
   font-weight: 600;
@@ -212,6 +217,20 @@ body {
   margin-left: 2rem;
   position: absolute;
   display: grid;
+}
+@media screen and (min-width: 768px) {
+  .shows-head {
+    display: flex;
+    gap: 150px;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-head {
+    display: flex;
+    gap: 150px;
+    align-items: center;
+  }
 }
 .shows-head__venue {
   padding-top: 0.625rem;
@@ -230,6 +249,23 @@ body {
   width: 100%;
   margin-left: 1.5rem;
   display: grid;
+}
+@media screen and (min-width: 768px) {
+  .shows-data {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    white-space: nowrap;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows-data {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: space-between;
+  }
 }
 .shows-data__date {
   font-weight: 600;
