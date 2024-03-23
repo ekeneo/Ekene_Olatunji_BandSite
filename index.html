@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Site</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./scripts/index-page.js" defer></script>
+    <script src="./scripts/band-site-api.js" defer></script>
+    <!-- <script src="./scripts/test.js" defer></script> -->
   </head>
   <body>
     <!-- site-header block -->
@@ -111,7 +114,7 @@
         class="user-icon"
       />
       <!-- comment form block -->
-      <form class="comments-form">
+      <form class="comments-form" id="comments-form">
         <!-- Name text area -->
         <div class="input-container">
           <label for="nameId">NAME</label>
@@ -134,7 +137,7 @@
     </div>
 
     <!-- comments list block -->
-    <section class="comments">
+    <section class="comments" id="comment-list">
       <!-- Default comments will be rendered here -->
     </section>
 

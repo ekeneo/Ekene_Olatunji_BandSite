@@ -1,3 +1,11 @@
+// ===Sprint 3 begin ===
+// create an instance of the api class
+// const apiKey = "35c9c5f2-6e06-48a3-913c-08f4571c2416";
+// const bandSiteApi = new BandSiteApi(apiKey);
+
+// console.log(bandSiteApi);
+
+// ==== Sprint 2 begin ===
 // list of default comment entries
 // array of (comment) objects: name, comment, date
 const commentEntries = [
