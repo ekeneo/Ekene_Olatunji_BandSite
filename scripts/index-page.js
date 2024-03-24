@@ -1,5 +1,6 @@
 // ===Sprint 3 begin ===
 const commentEntriesContainer = document.querySelector('.comments');
+const formEl = document.querySelector('.comments-form');
 const apiKey = "35c9c5f2-6e06-48a3-913c-08f4571c2416";
 const bandSiteApi = new BandSiteApi(apiKey);
 
@@ -47,7 +48,6 @@ function renderCommentEntries(comment) {
   console.log("commentGroupEl: ", commentGroupEl);
 }
 
-
 const getComments = async () => {
   try {
     commentEntriesContainer.innerText = '...loading comments ...';
@@ -65,13 +65,44 @@ const getComments = async () => {
     commentEntriesContainer.innerText = "Sorry, we couldn't fetch your data at the moment";
   }
 }
+
+// Comment Form
+formEl.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const nameVal = event.target.nameId.value;
+  const commentVal = event.target.commentId.value;
+  const dateVal = getCurrentDate();
+
+  const newEntry = {
+    name: nameVal,
+    comment: commentVal
+  };
+
+
+  try {
+    // sending the user entered comment data to a createComment method
+    const newCommentData = await bandSiteApi.createComment(newEntry);
+    console.log('New comment success: ', newCommentData);
+
+    // re-fetch our albums and re-render the album elements after successful album creation
+    getComments();
+  } catch(error) {
+    formEl.innerText = "Sorry, we couldn't create a new comment";
+  }
+
+  // Clear all form fields from the form after submitting
+  event.target.reset();
+
+});
+
 getComments();
 
 
 // ===Sprint 3 end ===
 
 
-// // ==== Sprint 2 begin ===
+// ==== Sprint 2 begin ===
 // // list of default comment entries
 // // array of (comment) objects: name, comment, date
 // const commentEntries = [
@@ -162,7 +193,7 @@ getComments();
 //   return date.toLocaleDateString('en-US', options);
 // }
 
-// // Form event handling callback
+// // // Form event handling callback
 // const formEl = document.querySelector('.comments-form');
 
 // formEl.addEventListener('submit', (event) => {
@@ -181,8 +212,6 @@ getComments();
 //   console.log('newEntry: ', newEntry);
 
 //   commentEntries.push(newEntry);
-
-//   renderCommentEntries();
 
 //   // Clear all form fields from the form after submitting
 //   event.target.reset();
