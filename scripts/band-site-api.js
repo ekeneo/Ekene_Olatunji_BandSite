@@ -7,10 +7,15 @@ class BandSiteApi {
 
     // function to call comments
     async getComments() {
+      try {
         const commentsResponse = await axios.get(`${this.baseUrl}/comments?api_key=${this.apiKey}`);
         const commentData = commentsResponse.data;
+        // sorting the data based on id to make the data descending order
+        commentData.sort((a, b) => Number(b.id) - Number(a.id));
         return commentData;
-        // console.log('commentData: ', commentData);
+      } catch(error) {
+        console.log('getComments error: ', error);
+      }
     }
     
     // function to call shows

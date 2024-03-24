@@ -72,11 +72,12 @@ formEl.addEventListener('submit', async (event) => {
 
   const nameVal = event.target.nameId.value;
   const commentVal = event.target.commentId.value;
-  const dateVal = getCurrentDate();
+  // const dateVal = getCurrentDate();
 
   const newEntry = {
     name: nameVal,
-    comment: commentVal
+    comment: commentVal,
+    // date: dateVal
   };
 
 
