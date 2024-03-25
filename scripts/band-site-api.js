@@ -10,8 +10,8 @@ class BandSiteApi {
       try {
         const commentsResponse = await axios.get(`${this.baseUrl}/comments?api_key=${this.apiKey}`);
         const commentData = commentsResponse.data;
-        // sorting the data based on id to make the data descending order
-        commentData.sort((a, b) => Number(b.id) - Number(a.id));
+        // sorting the data based on timestamp to make the data descending order
+        commentData.sort((a, b) => Number(b.timestamp) - Number(a.timestamp));
         return commentData;
       } catch(error) {
         console.log('getComments error: ', error);

@@ -4,8 +4,16 @@ const formEl = document.querySelector('.comments-form');
 const apiKey = "35c9c5f2-6e06-48a3-913c-08f4571c2416";
 const bandSiteApi = new BandSiteApi(apiKey);
 
-console.log(bandSiteApi);
+// Function to format timestamp to date in the format mm/dd/yyyy
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+  const month = (date.getMonth() + 1).toString().padStart(2, '0'); 
+  const day = date.getDate().toString().padStart(2, '0');
+  const year = date.getFullYear();
+  return `${month}/${day}/${year}`;
+}
 
+// function for comment entries
 function renderCommentEntries(comment) {
   // article tag <article class="comments-list">
   const commentArticleEl = document.createElement("div");
@@ -36,7 +44,7 @@ function renderCommentEntries(comment) {
   // create date <date class="comments-list__date">11/02/2023</date>
   const commentDateEl = document.createElement('date');
   commentDateEl.classList.add('comments-list__date');
-  commentDateEl.innerText = comment.timestamp; 
+  commentDateEl.innerText = formatDate(comment.timestamp);
   commentGroup2El.appendChild(commentDateEl);
 
   // create comment <p class="comments-list__comment">
@@ -45,7 +53,7 @@ function renderCommentEntries(comment) {
   commentTextEl.innerText = comment.comment;
   commentGroupEl.appendChild(commentTextEl);
 
-  console.log("commentGroupEl: ", commentGroupEl);
+  // console.log("commentGroupEl: ", commentGroupEl);
 }
 
 const getComments = async () => {
@@ -72,12 +80,11 @@ formEl.addEventListener('submit', async (event) => {
 
   const nameVal = event.target.nameId.value;
   const commentVal = event.target.commentId.value;
-  // const dateVal = getCurrentDate();
 
   const newEntry = {
     name: nameVal,
     comment: commentVal,
-    // date: dateVal
+    timestamp: timestamp
   };
 
 
@@ -100,7 +107,7 @@ formEl.addEventListener('submit', async (event) => {
 getComments();
 
 
-// ===Sprint 3 end ===
+// ===Sprint 3 end (Please note, I commented out Sprint 2 section for my self study)  ===
 
 
 // ==== Sprint 2 begin ===

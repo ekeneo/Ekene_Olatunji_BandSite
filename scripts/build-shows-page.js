@@ -2,9 +2,23 @@
 const showEntriesContainer = document.querySelector('.shows-container');
 const apiKey = "35c9c5f2-6e06-48a3-913c-08f4571c2416";
 const bandSiteApi = new BandSiteApi(apiKey);
+// console.log(bandSiteApi);
 
-console.log(bandSiteApi);
+// Function to format timestamp/date in the format "Mon Sept 09 2024"
+function formatDate(timestamp) {
+  const date = new Date(timestamp);
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  const dayOfWeek = daysOfWeek[date.getDay()];
+  const month = months[date.getMonth()];
+  const day = date.getDate().toString().padStart(2, '0');
+  const year = date.getFullYear();
 
+  return `${dayOfWeek} ${month} ${day} ${year}`;
+}
+
+
+// function for shows
 function renderShowEntries(show) {
   // create shows <div class="shows">
     const showsEl = document.createElement("div");
@@ -19,19 +33,19 @@ function renderShowEntries(show) {
     // create DATE <p class="shows-head__date">DATE</p>
     const showDateEl = document.createElement("p");
     showDateEl.classList.add('shows-head__date');
-    showDateEl.textContent = "DATE"; 
+    showDateEl.innerText = "DATE"; 
     showsHeadEl.appendChild(showDateEl);
 
     // create VENUE <p class="shows-head__venue">VENUE</p>
     const showVenueEl = document.createElement("p");
     showVenueEl.classList.add('shows-head__venue');
-    showVenueEl.textContent = "VENUE"; 
+    showVenueEl.innerText = "VENUE"; 
     showsHeadEl.appendChild(showVenueEl);
 
     // create LOCATION <p class="shows-head__location">LOCATION</p>
     const showLocationEl = document.createElement("p");
     showLocationEl.classList.add('shows-head__location');
-    showLocationEl.textContent = "LOCATION"; 
+    showLocationEl.innerText = "LOCATION"; 
     showsHeadEl.appendChild(showLocationEl);
 
     // create shows-data <div class="shows-data">
@@ -42,28 +56,28 @@ function renderShowEntries(show) {
     // create shows-data__date <p class="shows-data__date">Mon Sep 09 2024</p>
     const showsDateEl = document.createElement("p");
     showsDateEl.classList.add('shows-data__date');
-    showsDateEl.textContent = show.date; 
+    showsDateEl.innerText = formatDate(show.date); 
     showsDataEl.appendChild(showsDateEl);
 
     // create shows-data__venue <p class="shows-data__venue">Ronald Lane</p>
     const showsVenueEl = document.createElement("p");
     showsVenueEl.classList.add('shows-data__venue');
-    showsVenueEl.textContent = show.place; 
+    showsVenueEl.innerText = show.place; 
     showsDataEl.appendChild(showsVenueEl);
 
     // create shows-data__location <p class="shows-data__location">San Francisco, CA</p>
     const showsLocationEl = document.createElement("p");
     showsLocationEl.classList.add('shows-data__location');
-    showsLocationEl.textContent = show.location; 
+    showsLocationEl.innerText = show.location; 
     showsDataEl.appendChild(showsLocationEl);
 
     //  create Buy Tickets Button <button class="shows-data__btn">BUY TICKETS</button>
     const showsBtnEl = document.createElement("button");
     showsBtnEl.classList.add('shows-data__btn');
-    showsBtnEl.textContent = "BUY TICKETS"; 
+    showsBtnEl.innerText = "BUY TICKETS"; 
     showsDataEl.appendChild(showsBtnEl);
     
-    console.log('showsEl: ', showsEl);
+    // console.log('showsEl: ', showsEl);
 }
 
 const getShows = async () => {
@@ -85,7 +99,7 @@ const getShows = async () => {
 }
 getShows();
 
-//  ==== Sprint 3 end ===
+//  ==== Sprint 3 end (Please note, I commented out Sprint 2 section for my self study) ===
 
 
 // === Sprint 2 Begin - Kept for future reference===
@@ -141,19 +155,19 @@ getShows();
 //     // create DATE <p class="shows-head__date">DATE</p>
 //     const showDateEl = document.createElement("p");
 //     showDateEl.classList.add('shows-head__date');
-//     showDateEl.textContent = "DATE"; 
+//     showDateEl.innerText = "DATE"; 
 //     showsHeadEl.appendChild(showDateEl);
 
 //     // create VENUE <p class="shows-head__venue">VENUE</p>
 //     const showVenueEl = document.createElement("p");
 //     showVenueEl.classList.add('shows-head__venue');
-//     showVenueEl.textContent = "VENUE"; 
+//     showVenueEl.innerText = "VENUE"; 
 //     showsHeadEl.appendChild(showVenueEl);
 
 //     // create LOCATION <p class="shows-head__location">LOCATION</p>
 //     const showLocationEl = document.createElement("p");
 //     showLocationEl.classList.add('shows-head__location');
-//     showLocationEl.textContent = "LOCATION"; 
+//     showLocationEl.innerText = "LOCATION"; 
 //     showsHeadEl.appendChild(showLocationEl);
 
 //     // create shows-data <div class="shows-data">
@@ -164,25 +178,25 @@ getShows();
 //     // create shows-data__date <p class="shows-data__date">Mon Sep 09 2024</p>
 //     const showsDateEl = document.createElement("p");
 //     showsDateEl.classList.add('shows-data__date');
-//     showsDateEl.textContent = showItem.date; 
+//     showsDateEl.innerText = showItem.date; 
 //     showsDataEl.appendChild(showsDateEl);
 
 //     // create shows-data__venue <p class="shows-data__venue">Ronald Lane</p>
 //     const showsVenueEl = document.createElement("p");
 //     showsVenueEl.classList.add('shows-data__venue');
-//     showsVenueEl.textContent = showItem.venue; 
+//     showsVenueEl.innerText = showItem.venue; 
 //     showsDataEl.appendChild(showsVenueEl);
 
 //     // create shows-data__location <p class="shows-data__location">San Francisco, CA</p>
 //     const showsLocationEl = document.createElement("p");
 //     showsLocationEl.classList.add('shows-data__location');
-//     showsLocationEl.textContent = showItem.location; 
+//     showsLocationEl.innerText = showItem.location; 
 //     showsDataEl.appendChild(showsLocationEl);
 
 //     //  create Buy Tickets Button <button class="shows-data__btn">BUY TICKETS</button>
 //     const showsBtnEl = document.createElement("button");
 //     showsBtnEl.classList.add('shows-data__btn');
-//     showsBtnEl.textContent = "BUY TICKETS"; 
+//     showsBtnEl.innerText = "BUY TICKETS"; 
 //     showsDataEl.appendChild(showsBtnEl);
 //   });
 // }

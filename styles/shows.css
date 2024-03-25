@@ -108,10 +108,10 @@ body {
   height: 80vh;
   min-height: 6.25rem;
   display: flex;
-  flex-direction: column; /* Added to stack items vertically */
-  justify-content: center; /* Center items vertically */
-  align-items: start; /* Center items horizontally */
-  position: relative; /* Added for positioning pseudo-element */
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  position: relative;
 }
 .hero::before {
   content: "";
@@ -127,7 +127,7 @@ body {
   position: sticky;
   padding: 0rem 0.625rem;
   margin: 0rem 1.25rem;
-  z-index: 2; /* Ensure the subtitle is above the overlay */
+  z-index: 2;
   margin-bottom: 10px;
 }
 @media screen and (min-width: 768px) {
@@ -247,10 +247,15 @@ body {
   font-size: 18px;
   color: black;
   border-bottom: 2px solid #E1E1E1;
-  margin-bottom: 1rem;
   width: 100%;
   margin-left: 1.5rem;
   display: grid;
+}
+.shows-data:hover {
+  background: #FAFAFA;
+}
+.shows-data:active {
+  background: #E1E1E1;
 }
 @media screen and (min-width: 768px) {
   .shows-data {
@@ -327,6 +332,12 @@ body {
   transition: all 0.3s;
   margin-top: -4px;
   font-weight: 600;
+}
+.shows-data__btn:hover {
+  background: black;
+}
+.shows-data__btn:active {
+  background: #1c1c1c;
 }
 @media screen and (min-width: 768px) {
   .shows-data__btn {
