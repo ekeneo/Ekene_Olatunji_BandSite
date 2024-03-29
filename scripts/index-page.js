@@ -84,7 +84,7 @@ formEl.addEventListener('submit', async (event) => {
   const newEntry = {
     name: nameVal,
     comment: commentVal,
-    timestamp: timestamp
+    // timestamp: timestamp
   };
 
 
